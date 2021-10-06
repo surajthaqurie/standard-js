@@ -1,0 +1,24 @@
+// In here all we pass is just object that tells which stuff converted to es5
+
+{
+  /*
+   presets: A collection of code transform plugins,
+  which are like the pieces of code that actually apply
+  the actual transformations to our code.
+  */
+  "presets": [
+    [
+      "env", // where to preset: environment
+      {
+        "targets": {
+          // which environment to target
+          "browsers": [
+            // Which browser are targeted
+            "last 5 versions",
+            "ie >= 8"
+          ]
+        }
+      }
+    ]
+  ]
+}
