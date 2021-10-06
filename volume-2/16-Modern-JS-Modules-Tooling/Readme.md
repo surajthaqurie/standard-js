@@ -10,7 +10,7 @@ Basically of how we write JavaScript today, because when we built applications.
 One great thing about modules is that we can also **_include 3rd-party modules_** into our own code.
 
 - And there are thousands of open source modules which we also call **_packages_** that developers share on the **_NPM repository_**.
-- **_Node Package Manager(NPM)_** contains open-source packages to include 3rd-party code in our own code (eg. React, jQuery, Leaflet, etc.)
+- **_Node Package Manager (NPM)_** contains open-source packages to include 3rd-party code in our own code (eg. React, jQuery, Leaflet, etc.)
 - So basically NPM is both the repository in which **_packages live_** and a program that we use on our computers to **_install and manage these packages_**.
 - NPM contains development tools that help build our application (eg. live-server, Parcel, Babel etc).
 
@@ -52,11 +52,12 @@ Modules are a super important part of software development.
 - Now that sounds a bit like a function or even a class, but the difference is that a module is usually a **_standalone file_**. Now that's not always the case but normally when we think of a module we think of a separate file.
 - So of course a module always contains some code but it can also have **_imports_** and **_exports_**.
 
-  - **_Exports_**:
-    - So with exports, as the name says we can export values out of a module.
-    - For example, simple value or event entire functions.
-    - And whatever we exports from a module is called a the public API.
-    - So this just like classes where we can also expose a public API for other codes to consume.
+- **_Exports_**:
+
+  - So with exports, as the name says we can export values out of a module.
+  - For example, simple value or event entire functions.
+  - And whatever we exports from a module is called a the public API.
+  - So this just like classes where we can also expose a public API for other codes to consume.
 
 - **_Imports_**:
   - No in the case of modules, this public API is actually consumed by **_Importing values_** into a module.
@@ -99,14 +100,14 @@ So as of ES6, JavaScript has a native built-in module system. Now we did have mo
 
 **_Comparing between two types of file ES6 module and Script file_**:
 
-|                     | ES6 Module                                             | Script        |
-| :------------------ | :----------------------------------------------------- | :------------ |
+|                     | ES6 Module                                              | Script        |
+| :------------------ | :------------------------------------------------------ | :------------ |
 | Top-level variables | Scoped to module (private variable)                     | global        |
-| Default mode        | Strict mode                                            | "Sloppy" mode |
-| Top-level this      | undefined                                              | window        |
+| Default mode        | Strict mode                                             | "Sloppy" mode |
+| Top-level this      | undefined                                               | window        |
 | Imports and exports | YES (need to happen at top level & imports are hoisted) | NO            |
-| HTML Linking        | <script type="module">                                 | <script>      |
-| File downloading    | Asynchronous                                           | Synchronous   |
+| HTML Linking        | <script type="module">                                  | <script>      |
+| File downloading    | Asynchronous                                            | Synchronous   |
 
 **Importing Modules before Execution**:
 
@@ -141,7 +142,7 @@ In ES6 there are two types of exports:
   - This is a little bit like exporting an object from the module.
   - We can change the variable name using **_as_** keyword.
 
-  - **_Name Import_**:
+- **_Name Import_**:
 
   - We can then import that variable, we just have to write it with the **_exact same name_**.
   - And we actually have to put them inside the **_curly braces_**.
@@ -164,7 +165,8 @@ In ES6 there are two types of exports:
   - And so then when we import it we can basically give it any name that we want.
 
 ```
-Imports are not copies of the export. They are instead like a live connection that means is that they point to the sample place in memory.
+Imports are not copies of the export. They are instead like a live connection that means is that
+they point to the sample place in memory.
 ```
 
 ---
@@ -218,9 +220,9 @@ console.log(shoppingCart2);
 Beside **_native ES Modules_**, and the **_ module pattern_** there are also other module systems that have been used by JavaScript in the past.
 
 - But again, they were not native JavaScript so they relied on some external implementations.
-- And two examples are: **_ADM modules(Asynchronous Module Definition)_** and **_CommonJs modules_**.
+- And two examples are: **_ADM modules (Asynchronous Module Definition)_** and **_CommonJs modules_**.
 
-  `CommonJS modules`: `const package = require('module-name');`
+  - For Example CommonJS modules: `const package = require('module-name');`
 
 - Now, CommonJs modules are important for us, because they have been used in Node.js, for almost all of its existence.
 - So only very recently **_ES modules_** have actually been implemented in **_Node.js_**. `import package from 'module-name';`
@@ -313,63 +315,39 @@ console.log(stateDeepClone); // true
 
 The Parcel is a **_module bundler_** and it's super fast and easy to use and ever more importantly, it works out of the box **_without any configuration_**.
 
-- Now you might've heard of Webpack as well which us probably the most popular bundler and especially in react world.
-
-- Parcel is basically just another build tool which is also on NPM and so we will use NPM to install it. ` npm install parcel-bundler --save-dev`
+- Now you might've heard of **_Webpack_** as well which us probably the most popular bundler and especially in react world.
 
 - Parcel is basically just **_command line interface_** so we can use it from **_terminal_** also.
 
-- Now, in order to still be able to use Parcel in the console without installing globally, we have two options. So we can use something called **_NPX_** or we can use **_NPM scripts_**.
+- Basically, we can use parcel ways two ways:
 
-  - **_NPX_**:
+1. **_NPX_**:
 
-    - is basically an application built into a NPM.
+- is basically an application built into a NPM.
 
-    ```bash
-    npx parcel index.html
-    ```
-
-  - **_NPM Script_**:
-
-    - NPM scripts are basically another way of running a locally installed packages in the command line.
-    - They also allow us to basically automate repetitive tasks. And so therefore we then don't have to write NPX Parcel and all of that, every time that we want to use it.
-
-    ```json
-    "scripts": {
-    "start": "parcel index.html", // Development
-    "build":"parcel build index.html" // Production
-    },
-    ```
-
-`In HTML`:
-
-```Html
-
-  <!-- Connecting modules in html file -->
-  <!-- <script type="module" defer src="script.js"></script> -->
-
-  <!-- Parcel uses normal without (type= 'module') -->
-  <script defer src="script.js"></script>
-
+```bash
+npx parcel index.html
 ```
 
-- Parcel create the **_dist_** folder which stands for **_distribution_**, because it is essentially gonna be this folder that we will **_send for production_**.
-- So basically it's the code in dist folder that we will send to our final users.
+2. **_NPM Script_**:
+
+- NPM scripts are basically another way of running a locally installed packages in the command line.
+- They also allow us to basically automate repetitive tasks. And so therefore we then don't have to write NPX Parcel and all of that, every time that we want to use it.
+
+```json
+"scripts": {
+"start": "parcel index.html", // development
+"build":"parcel build index.html" // production
+},
+```
 
 ```js
 // import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 // import cloneDeep from 'lodash-es';
+// import cloneDeep from "lodash";
 
-// Parcel is even smart enough to then automatically install this package here
-// Parcel can indeed work with all the CommonJS modules as well.
-// So this way we can then simply use all the modules that are available on NPM
-// And which still use this older module format
-import cloneDeep from "lodash";
-
-// This code that only Parcel understands so it will not make it into our final bundle
-// because the browser is not going to understand any of it
-// Hot module reloading: When ever we change one of the modules it will then of course, trigger a rebuild, like this
-// But that new modified bundle will then automatically like magic,
+// Hot module reloading: When ever we change one of the modules it will then of course,
+// trigger a rebuild, like this. But that new modified bundle will then automatically like magic,
 // get injected into the browser without triggering a whole page reload.
 if (module.hot) {
   module.hot.accept();
@@ -378,6 +356,114 @@ if (module.hot) {
 // Whenever we change something here this will then not reload this part of the page
 // The state is maintained whenever we reload the page.
 ```
+
+---
+
+**Some Parcel Packages**:
+
+**_Parcel_**:
+
+- Installation :
+
+  - `npm install parcel` auto install latest parcel.
+  - `npm install parcel@next` for latest beta version.
+  - `npm install parcel@version` for specific version.
+
+- Package.json configuration:
+
+  - development
+
+    ```json
+
+    "main":"script.js", // only .js file (original js filename that attached with html)
+    ...
+    "scripts": {
+    "start": "parcel index.html", // development
+    },
+    ```
+
+  - production
+
+  ```json
+
+  "default":"script.js", // only .js file (original js filename that attached with html)
+  ...
+  "scripts": {
+  "build":"parcel build index.html --dist-dir ./dist", // Production (parcel version 2)
+  "build":"parcel build index.html --out-dir ./dist" // Production (parcel version 1)
+  },
+  ```
+
+- In Html file:
+
+```Html
+<!-- Connecting modules in html file -->
+<!-- <script type="module" defer src="script.js"></script> -->
+
+<script defer type="module" src="src/js/script.js"></script>
+```
+
+- Imports statice files assets (images, files):
+
+```js
+import icons from "../../img/icons.svg"; // parcel version 1
+// import icons from "url:../../img/icons.svg"; // parcel version  2
+// console.log(icons);
+```
+
+**_Parcel-bundler_**:
+
+- Installation :
+
+  - `npm install parcel-bundler` auto install latest parcel-bundler.
+  - `npm install parcel-bundler_@next` for latest beta version.
+  - `npm install parcel-bundler_@version` for specific version.
+
+- Package.json configuration:
+
+  - development
+
+  ```json
+   "main":"index.html",   // main html file
+   ...
+  "scripts": {
+  "start": "parcel index.html", // development
+  },
+  ```
+
+  - production
+
+```json
+    "default":"index.html",   // main html file
+    ...
+    "scripts": {
+    "build":"parcel build index.html --out-dir ./dist" // Production
+    },
+```
+
+- In Html file:
+
+```html
+<!-- Connecting modules in html file -->
+<!-- <script type="module" defer src="script.js"></script> -->
+
+<script defer src="src/js/script.js"></script>
+```
+
+- Imports statice files assets (images, files):
+
+```js
+import icons from "../../img/icons.svg";
+// console.log(icons);
+```
+
+---
+
+**_Features_**:
+
+- Parcel create the dist folder which stands for distribution, because it is essentially gonna be this folder that we will send for production.
+- Parcel is even smart enough to then automatically install the necessary packages.
+- Parcel can indeed work with all the CommonJS modules as well.
 
 ---
 
@@ -457,6 +543,35 @@ Finally, just to finish there is still **_one feature that is not polyfilled_** 
 - So we need import:
   `import 'regenerator-runtime/runtime';`
 
+---
+
+- important packages:
+
+```json
+...
+"dependencies": {
+    "core-js": "^3.18.1",  // for core js
+    "regenerator-runtime": "^0.13.9",  // for async/await (promises)
+  },
+```
+
+- important imports:
+
+```js
+import { async } from "regenerator-runtime";
+```
+
+**_Where we use async/await function this import `async` is important._**
+
+```js
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+```
+
+**_In main js file: `core-js/stable`: core js and `regenerator-runtime/runtime`: promised based._**
+
+---
+
 ```js
 class Person {
   #greeting = "Hey";
@@ -472,7 +587,7 @@ console.log("Jonas" ?? null);
 console.log(cart.find((el) => el.quantity >= 2));
 Promise.resolve("Test").then((x) => console.log(x));
 
-// * Polyfilling and parcel-bundler automatically polyfills -------------------
+// * Polyfilling and parcel automatically polyfills -------------------
 // - these added features
 import "core-js/stable";
 
@@ -480,11 +595,13 @@ import "core-js/stable";
 // import 'core-js/stable/array/find';
 // import 'core-js/stable/promise';
 
-// - Polyfilling async functions
+// - Polyfilling Promises
 import "regenerator-runtime/runtime";
 ```
 
----
+```
+NOTE: Till now private Class data cannot be implemented properly in parcel so we uses protected.
+```
 
 ## Modern, Clean And Declarative JavaScript Programming:
 
@@ -616,25 +733,3 @@ The functional programming is only a part of using and writing declarative code.
 
 ---
 
-## Static files
-
-**_imports for static file: Parcel 1_**
-
-- Just normal imports and path to the file.
-
-```js
-import icons from "../img/icons.svg";
-// console.log(icons);
-
-```
-
-**_imports for static file: Parcel 2_**
-
-- for any static assets that are not programming files So for like images or videos or sound life we need to write **_url: then path to the file_**
-
-```js
-import icons from "url:../img/icons.svg";
-// console.log(icons);
-
-```
-  
