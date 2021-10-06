@@ -1,6 +1,6 @@
-## Data Structures Operators
+# Data Structures Operators
 
-**Destructuring**:
+## Destructuring:
 
 - It's basically a way of unpacking values from an array or an object into separate variables.
 - In other words, destructuring is to break a complex data structure down into a smaller data structure like a variable.
@@ -15,7 +15,7 @@
 - Nested destructuring: `const [i, , [j, k]] = nested;`
 - Default values: `const [p = 1, q = 1, r = 1] = [8, 9];`
 
-  **Destructuring Object**:
+**Destructuring Object**:
 
 - We use curly braces to destructure object, because this is also how we create objects.
 - Then all we have to do is to **_provide the variable names_** that **_ exactly match the property names_** that we want to **_retrieve from the object_**.
@@ -26,43 +26,41 @@
 - Function parameters: `orderDelivery: function ({starterIndex = 1, mainIndex = 0, time = '20:00', address: a}){};`
 - Mutating variables
 
-```
+```js
 let a = 111;
 let b = 999;
 const obj = {
   a: 23,
   b: 7,
-  c: 14
+  c: 14,
 };
 
 // {a,b} =obj;  // Uncaught SyntaxError: Unexpected token '='
 
-({
-  a,
-  b
-} = obj);
+({ a, b } = obj);
 
-console.log(a, b);  // 23 7
-
+console.log(a, b); // 23 7
 ```
 
-**The Spread Operator(...)**:
+## The Spread Operator(...):
 
 - We can use the spread operator to basically expand an array into all its elements.
 - So basically unpacking all the array elements at one.
 - The spread operator only works on arrays, but that's not entirely true, because actually, the spread operator works on all so-called **_iterables_**.
-- **_Iterables_**:
 
-  - The most of the **_built-in data structures_** in JavaScript are now iterables, but **_except objects_**.
-  - There are different iterables in JavaScript and these are things like all arrays, strings, maps, or sets but not object.
+**Iterables**:
 
-- **_Shallow copy_**:`const mainMenuCopy = [...restaurant.mainMenu];`
-- **_Join 2 arrays_**: `const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];`
-- **_String_**:
+- The most of the **_built-in data structures_** in JavaScript are now iterables, but **_except objects_**.
+- There are different iterables in JavaScript and these are things like all arrays, strings, maps, or sets but not object.
 
-```
-const str = 'Jonas';
-const letters = [...str, '', 'S.'];
+**Shallow copy**:
+`const mainMenuCopy = [...restaurant.mainMenu];`
+**Join 2 arrays**: `const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];`
+**_String_**:
+
+```js
+const str = "Jonas";
+const letters = [...str, "", "S."];
 console.log(letters); // ['J', 'o', 'n', 'a', 's', '', 'S.']
 
 console.log(...str); // J o n a s
@@ -70,32 +68,30 @@ console.log(...str); // J o n a s
 
 - **_Template literal_**:
 
-```
+```js
 // console.log(`${...str} Schmedthmann`); // Uncaught SyntaxError: Unexpected token '...'
+```
 
 - This is not a place that expected multiple values separated by a comma
-
 - Multiple values separated by a comma are usually only expected when we pass arguments into a function or when we built a new array.
-
-```
 
 - **Objects**:
   - Since ES-2018, the spread operator actually also works on objects. Even though objects are not iterables.
 
-```
+```js
 const newRestaurant = {
   foundedIn: 1998,
   ...restaurant,
-  founder: 'Guiseppe'
+  founder: "Guiseppe",
 };
 
 console.log(newRestaurant);
 
 // Shallow copy
 const restaurantCopy = {
-  ...restaurant
+  ...restaurant,
 };
-restaurantCopy.name = 'Ristorante Roma';
+restaurantCopy.name = "Ristorante Roma";
 
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
@@ -170,7 +166,8 @@ console.log(restaurant.name);
 
 Now ES6 introduced three ways, which make it easier to write object literals (`obj={}`).
 
-- **_Writing properties_**: if the variable and property of object has same name the we can:
+- **_Writing properties_**:
+  - if the variable and property of object has same name the we can:
 
 ```
   // openingHours: openingHours, // Before ES6
@@ -193,8 +190,8 @@ Now ES6 introduced three ways, which make it easier to write object literals (`o
 
 - **_We Can compute the property names_**:
 
-```
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+```js
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 // Before ES6
 // const openingHours = {
@@ -222,16 +219,16 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-   [weekdays[4]]: {
+  [weekdays[4]]: {
     open: 11,
     close: 23,
   },
-   [`day-${2+4}`]: {  // day-6
+  [`day-${2 + 4}`]: {
+    // day-6
     open: 11,
     close: 23,
   },
 };
-
 ```
 
 ---
@@ -282,19 +279,23 @@ console.log(users[0]?.name ??'User array empty');
 **Looping Objects (Object Keys, Values and Entries)**:
 
 - **_Object.keys(myObject)_**:
-- Only keys of object.
+  - Only keys of object.
 - **_Object.values(myObject)_**:
-- Only value of object.
+  - Only value of object.
 - **_Object.entries(myObject)_**:
-- Entries is basically names plus the values together.
-- In Object, it return object key number and values.
+  - Entries is basically names plus the values together.
+  - In Object, it return object key number and values.
+- **_Object.fromEntries()_**:
+  - In JavaScript, since ES2019, there is now a new and very handy method that we can use to convert entries to an object.
+  - That Opposite of the Entries method that is available on arrays, it takes an array of entries and converts it to an object.
 
 ---
 
 In ES6 two more data structure are introduce, that are **_sets_** and **_maps_**
+
 **Sets**:
 
-- ES6
+- ES6 data structure feature.
 - A set is basically just a collection of unique values. So that means that a set can never have any duplicates.
 - Sets are also iterables can of course hold mixed data types.
 - We can see that a set kind of looks similar to an array, So there are no key value pairs just bunch of values grouped together.
@@ -354,7 +355,7 @@ console.log(new Set('jonassschmedtmann').size); // 11
 
 **Maps**:
 
-- ES6
+- ES6 data structure feature.
 - Instead in JavaScript, a map is a data structure, that we can use to map values to keys. So just like an object, data is sorted in key value pairs in maps.
 - The big difference between objects and maps, is that in maps, the keys can have any type. And objects, the keys are basically always strings.
 - Any type of key it could even be objects or erase or other maps.
@@ -479,36 +480,26 @@ console.log([...question.values()]);
 
 **String**:
 
-- Sting are also Zero based.
-- length:
-- indexOf():
-- lastIndexOf():
-- slice():
-- toLocaleLowerCase()
-- toUpperCase()
-- trim()
-- replace()
-- replaceAll()
-- replace(Regular Expression)
-- repeat()
+- String are also Zero based.
+- .length:
+- .indexOf():
+- .lastIndexOf():
+- .slice():
+- .toLocaleLowerCase()
+- .toUpperCase()
+- .trim()
+- .replace()
+- .replaceAll()
+- .replace(Regular Expression)
+- .repeat()
 - **_Booleans_**:
-  - includes()
-  - startsWith()
-  - endsWith()
-  - split()
-  - join()
+  - .includes()
+  - .startsWith()
+  - .endsWith()
+  - .split()
+  - .join()
 - **_Padding_**:
-  - padStart()
-  - padEnd()
+  - .padStart()
+  - .padEnd()
 
-```
-
-```
-
-```
-
-```
-
-```
-
-```
+---
