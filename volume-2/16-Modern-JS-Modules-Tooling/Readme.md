@@ -101,10 +101,10 @@ So as of ES6, JavaScript has a native built-in module system. Now we did have mo
 
 |                     | ES6 Module                                             | Script        |
 | :------------------ | :----------------------------------------------------- | :------------ |
-| Top-level variables | Scoped to module(private variable)                     | global        |
+| Top-level variables | Scoped to module (private variable)                     | global        |
 | Default mode        | Strict mode                                            | "Sloppy" mode |
 | Top-level this      | undefined                                              | window        |
-| Imports and exports | YES(need to happen at top level & imports are hoisted) | NO            |
+| Imports and exports | YES (need to happen at top level & imports are hoisted) | NO            |
 | HTML Linking        | <script type="module">                                 | <script>      |
 | File downloading    | Asynchronous                                           | Synchronous   |
 
@@ -636,3 +636,4 @@ import icons from "url:../img/icons.svg";
 // console.log(icons);
 
 ```
+  
