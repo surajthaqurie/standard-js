@@ -220,7 +220,7 @@ Beside **_native ES Modules_**, and the **_ module pattern_** there are also oth
 - But again, they were not native JavaScript so they relied on some external implementations.
 - And two examples are: **_ADM modules(Asynchronous Module Definition)_** and **_CommonJs modules_**.
 
-  **_CommonJS modules_**: `const package = require('module-name');`
+  `CommonJS modules`: `const package = require('module-name');`
 
 - Now, CommonJs modules are important for us, because they have been used in Node.js, for almost all of its existence.
 - So only very recently **_ES modules_** have actually been implemented in **_Node.js_**. `import package from 'module-name';`
@@ -317,7 +317,7 @@ The Parcel is a **_module bundler_** and it's super fast and easy to use and eve
 
 - Parcel is basically just another build tool which is also on NPM and so we will use NPM to install it. ` npm install parcel-bundler --save-dev`
 
-- So we do it here in the **_terminal_** because Parcel is basically just **_another command line interface_**.
+- Parcel is basically just **_command line interface_** so we can use it from **_terminal_** also.
 
 - Now, in order to still be able to use Parcel in the console without installing globally, we have two options. So we can use something called **_NPX_** or we can use **_NPM scripts_**.
 
@@ -369,7 +369,8 @@ import cloneDeep from "lodash";
 // This code that only Parcel understands so it will not make it into our final bundle
 // because the browser is not going to understand any of it
 // Hot module reloading: When ever we change one of the modules it will then of course, trigger a rebuild, like this
-// But that new modified bundle will then automatically like magic, get injected into the browser without triggering a whole page reload.
+// But that new modified bundle will then automatically like magic,
+// get injected into the browser without triggering a whole page reload.
 if (module.hot) {
   module.hot.accept();
 }
