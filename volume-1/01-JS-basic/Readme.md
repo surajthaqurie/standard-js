@@ -1,5 +1,7 @@
 ## ES5 (ECMAScript 5): ECMAScript 2009
 
+**In this directory**:
+
 - Inline and External Script
 - Variables and Data Types
 - Comments
