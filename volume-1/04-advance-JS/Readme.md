@@ -80,7 +80,7 @@
   - The **_first argument_** of the call method is always to set the `this` variable.
 - **_Apply_**:
   - This one accepts the **_arguments_** as an **_array_**, so that's only **_two arguments_**, first is `this` variable and second is **_array_**.
-  - `This` variable and then an **_array_** where **_all the other arguments go_**.
+  - `this` variable and then an **_array_** where **_all the other arguments go_**.
 - **_Bind_**:
   - The bind is very **_similar_** to the call method as well, so it also **_allow_** us to **_set the this variable explicitly_**.
   - However the **_difference_** here is that bind **_doesn't immediately call the function_**, but instead it generates a **_copy_** of the function. So that we can **_store it somewhere_**.
