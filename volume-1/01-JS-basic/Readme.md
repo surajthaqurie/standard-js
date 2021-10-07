@@ -79,6 +79,6 @@
 
 ---
 
-**Notes, Images and Documents are referenced from**:
+**Images, Notes and Documents are Referenced from**:
 
 - **_Copyright (c) [Jonas Schmedtman](https://twitter.com/jonasschmedtman)_**.
