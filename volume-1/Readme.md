@@ -1,29 +1,33 @@
-- JavaScript is a lightweight, cross-platform, object-oriented computer programming language.
+# Basic Introduction
 
-- JavaScript is one of the three core technologies of web development (HTML, CSS JS)
+JavaScript is a lightweight, cross-platform, object-oriented computer programming language.
 
-- Today, JavaScript can be used in different places:
+- JavaScript is one of the three core technologies of web development (HTML, CSS and JS)
 
-  - **_CLient-side_**: JavaScript was traditionally only used in the browser
-  - **_Server-side_**: Thanks to node.js, we can use JavaScript on the server as well
+Today, JavaScript can be used in different places:
 
-- JavaScript is wha made modern web development possible:
+- **Client-side**: JavaScript was traditionally only used in the browser
+- **Server-side**: Thanks to node.js, we can use JavaScript on the server as well
 
-  - Dynamic effects and interactivity
-  - Modern web applications that we can interact with
+---
 
-- **Webpack**:
+JavaScript is what made modern web development possible:
 
-  - To bundle together Javascript modules
+- **_Dynamic_** effects and interactivity
+- **_Modern_** web applications that we can interact with
 
-- **Babel**:
-  - To convert Es6,7,8,9,......... code back to ES5
-  
-  
-  ---
+---
 
+**Webpack**:
 
-All Projects Notes Images and  Documents are refrenced from
+- To bundle together Javascript modules
 
-Copyright (c) Jonas Schmedtman.
+**Babel**:
 
+- To convert ES6,7,8,9,......... code back to ES5
+
+---
+
+All Projects Notes Images and Documents are **referenced from**:
+
+**_Copyright (c) Jonas Schmedtman_**.
