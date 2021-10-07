@@ -1,67 +1,89 @@
-**What happend to our code in js engine**
+# How JavaScript Works
 
-- OurCode -> parser -> Conversion to Machine Code -> code Runs
-  - parser:
-    - Our code is parsed by a parser which basically reads our code line by line amd checks if the syntax of the code that we gave it is correct.
-    - And if we make some mistakes it basically throws an error and stops the execution.
-    - If everything is correct though, then the parser produces a data structure known as the Abstract Syntax Tree.
-- Conversion to Machine Code:
-  - Set of instructions, that can be executed directly by the computer's processor.
-- Code Runs;
-  - Actually runs and does its work.
+## What happened to our code in js engine
 
-**Order in which the code is run**
+- **OurCode** -> **parser** -> **Conversion to Machine Code** -> **Code Runs**
 
-- Execution context:
+**Parser**:
 
-  - All javaScript code needs to run in an environment, and these environments are called execution contexts.
-  - The default execution context is always the global context.
+- Our code is parsed by a parser which basically reads our code **_line by line_** and **_checks if the syntax_** of the code that we gave it is correct.
+- And if we make some **_mistakes_** it basically **_throws an error_** and **_stops the execution_**.
+- If everything is **_correct_** though, then the parser **_produces_** a data **_structure_** known as the **_Abstract Syntax Tree_**.
 
-- Global Context:
+**Conversion to Machine Code**:
 
-  - Code that is not inside any function
-  - Associated with the global object
-  - In the browser, that's the window object
-  - `lastName === window.lastName`
+- Set of instructions, that can be **_executed directly_** by the **_computer's processor_**.
 
-- Execution Stack (Active Context):
+**Code Runs**
 
-  - A new function gets its new execution context.
-  - And the new execution contex is put on top of the current contex, forming the so-called Execution Stack.
+- Actually **_runs_** and **_does its work_**.
 
-- Execution Context Object:
+---
 
-  - We can associate an execution context with an object.
-  - When a function is called, a new execution context is put on top of the execution stack.
-  - And This Hapeens in two phases: Creation phase, Execution phase
+## Order in which the code is run:
 
-- Creation Phase:
+**Execution context**:
 
-  - Creation of the varibale Object (VO);
-  - Creation of the scope chain
-  - Determine value od thi 'this' variable
+- All javaScript code needs to run in an **_environment_**, and these environments are called **_execution contexts_**.
+- The **_default_** execution context is always the **_global context_**.
 
-- Execution Phase:
+---
 
-  - The code of the function that generated the current context is ran line by line and all the variables are defined.
-  - If it's a global context, then it's a global code that is executed it.
+**Global Context**:
 
-  - **_Variable Object_**:
+- Code that is **_not inside_** any function and **_associated_** with the global object
+- In the browser, that's the window object: `lastName === window.lastName`
 
-    - The argument object is created, which contains all the arguments that were passed into the function
-    - Code is scanned for **_function declaration_**: for each function, a property is created in the Variable Object, **_pointing to the function_**.
-    - Code is scanned for **_varibale declaration_**: for each variable, a property is created in the Variable Object, and set to undefined.
+---
 
-  - **_Scope Chain (Scoping)_**:
+**Execution Stack (Active Context)**:
 
-    - Scoping answer the question "where can we access a certain variable"
-    - `Each new function creates a scope`: the space/evnironment, in which the variables it define are accessible.
-    - `Lexical Scoping`: a function that is lexically within another function gets access to the scope of the outer function (parent function).
+- A **_new_** function gets its **_new execution context_**.
+- And the **_new execution context_** is put on **_top of the current context_**, forming the so-called **_Execution Stack_**.
 
-  - **_The 'This' Keyword_**:
+---
 
-    - The 'this' variable is a variabl that each and every exection context gets.
-    - It stored in the execution context object.
-    - `Regular function call`: the this keyword points at the global object, (the window object, in the browser).
-    - `Method call`: The this variable points to the object that is calling the method.
-    - The this keyword is not assigned a value until a functio where it is defined is actually called.
+**Execution Context Object**:
+
+- We can associate an execution context with an object.
+- When a function is called, a new execution context is put on top of the execution stack.
+- And this happens in two phases: **_creation phase_**, **_execution phase_**
+
+1. **Creation Phase**:
+
+- Creation of the **_variable Object (VO)_**;
+- Creation of the **_scope chain_**
+- Determine value of `this` variable/keyword
+
+  **_Variable Object_**:
+
+  - The argument object is created, which contains all the arguments that were passed into the function
+  - Code is scanned for **_function declaration_**: for each function, a property is created in the Variable Object, **_pointing to the function_**.
+  - Code is scanned for **_varibale declaration_**: for each variable, a property is created in the Variable Object, and set to undefined.
+
+  **_Scope Chain (Scoping)_**:
+
+  - Scoping answer the question **_where can we access a certain variable_**
+  - **_Each new function creates a scope_**: the **_space/environment_**, in which the variables it **_define are accessible_**.
+  - **_Lexical Scoping_**: a function that is **_lexically_** within another function gets access to the **_scope of the outer function (parent function)_**.
+
+  **_This Keyword_**:
+
+  - The `this` variable is a variable that **_each and every execution context gets_**.
+  - It **_stored_** in the **_execution context object_**.
+  - **_Regular function call_**: the this keyword **_points_** at the **_global object_**, (the **_window object_**, in the browser).
+  - **_Method call_**: The this variable points to the **_object that is calling the method_**.
+  - The this keyword is **_not assigned a value_** until a function where it is **_defined is actually called_**.
+
+  ***
+
+2. **Execution Phase**:
+
+- The code of the **_function_** that generated the **_current context_** is run **_line by line_** and **_all the variables are defined_**.
+- If it's a **_global context_**, then it's a **_global code_** that is executed it.
+
+---
+
+**Images, Notes and Documents are Referenced from**:
+
+- **_Copyright (c) [Jonas Schmedtman](https://twitter.com/jonasschmedtman)_**.
