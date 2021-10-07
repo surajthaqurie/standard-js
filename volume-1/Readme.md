@@ -28,6 +28,6 @@ JavaScript is what made modern web development possible:
 
 ---
 
-All Projects, Notes Images and Documents are **referenced from**:
+**All Projects, Documents, Images and Notes are Referenced from**:
 
 - **_Copyright (c) [Jonas Schmedtman](https://twitter.com/jonasschmedtman)_**.
