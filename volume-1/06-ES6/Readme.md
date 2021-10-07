@@ -111,12 +111,14 @@ We use them whenever we want one or more parameters of a function to be preset, 
 
 - We can only add methods to classes, but not properties. Because inheriting properties through the object instances is not a best practices anyways.
 
-**Classes with Subclasses**:
+  ***
 
-**Object.create()**: allows to manually set the prototype of an object.
+  **Classes with Subclasses**:
+
+  **Object.create()**: allows to manually set the prototype of an object.
 
 ---
 
 **Images, Notes and Documents are Referenced from**:
 
-**_Copyright (c) [Jonas Schmedtman](https://twitter.com/jonasschmedtman)_**.
+- **_Copyright (c) [Jonas Schmedtman](https://twitter.com/jonasschmedtman)_**.
