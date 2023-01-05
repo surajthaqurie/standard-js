@@ -47,7 +47,7 @@ PROGRAMMING LANGUAGE.
 **Interpretation**:
 
 - There is an **_interpreter_** which runs through the **_source code and executes it line by line_**.
-- So here we **_do not_** have the **_same two steps as before_**, Instead the code is r**_ead and executed all at the same time_**.
+- So here we **_do not_** have the **_same two steps as before_**, Instead the code is **_read and executed all at the same time_**.
 - Of course the **_source code_** still **_needs_** to be **_converted_** into **_machine code_** but it simply **_happens right before it's executed and not ahead of time_**.
 
 - **_Now JavaScript_** used to be a **_purely interpreted language_** but the **_problem with interpreted_** language is that they are **_much, much slower than compiled languages_**.
